@@ -1,6 +1,8 @@
 package org.ampath.model;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 public class Order {
 	
@@ -14,13 +16,16 @@ public class Order {
 	
 	private Date createdAt;
 	
-	private String status;
+	private String status = "Ordered";
 	
 	private String createdBy;
+	
+	List<Meal> meals;
 	
 	public Order() {
 		this.id = autoIncrementAndGetID();
 		this.createdAt = new Date();
+		this.meals = new ArrayList<Meal>();
 	}
 	
 	public Order(String name, String restaurant, String status) {
@@ -88,5 +93,13 @@ public class Order {
 
 	public void setCreatedBy(String createdBy) {
 		this.createdBy = createdBy;
+	}
+
+	public List<Meal> getMeals() {
+		return meals;
+	}
+	
+	public void setMeals(List<Meal> meals) {
+		this.meals = meals;
 	}
 }

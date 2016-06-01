@@ -16,17 +16,19 @@ public class Meal {
 	
 	private Date createdAt;
 	
+	private String createdBy;
+	
 	public Meal() {
-		this.id = autoIncrementAndGetID();
 		this.createdAt = new Date();
 	}
 	
-	public Meal(String name, Double price,Order order) {
+	public Meal(String name, Double price,Order order, String createdBy) {
 		
 		this();
 		this.name = name;
 		this.price = price;
 		this.order = order;
+		this.createdBy = createdBy;
 	}
 	
 	public long getId() {
@@ -69,7 +71,15 @@ public class Meal {
 		this.createdAt = createdAt;
 	}
 	
-	private long autoIncrementAndGetID() {
+	public String getCreatedBy() {
+		return createdBy;
+	}
+
+	public void setCreatedBy(String createdBy) {
+		this.createdBy = createdBy;
+	}
+
+	public static long autoIncrementAndGetID() {
 		auto_id+=1;
 		return auto_id;
 	}	
