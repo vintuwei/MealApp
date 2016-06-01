@@ -20,9 +20,10 @@
 	        <div class="form-group col-md-12">
 	            <label class="col-md-2 control-lable" for="file">Price</label>
 	            <div class="col-md-7">
-	                <input type="text" ng-model="ctrl.meal.price" class="form-control input-sm" placeholder="Enter Price" required/>
+	                <input type="text" ng-model="ctrl.meal.price" class="form-control input-sm" placeholder="Enter Price" ng-pattern="/^[0-9]+(\.[0-9]{1,2})?$/" step="0.01" required/>
 	            	<div class="has-error" ng-show="mealForm.$dirty">
 	                    <span ng-show="mealForm.price.$error.required">Price is required</span>
+	                    <span ng-show="mealForm.name.$invalid">Invalid input</span>
 	                </div>
 	            </div>
 	        </div>

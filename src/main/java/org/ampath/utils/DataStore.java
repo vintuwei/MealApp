@@ -1,6 +1,7 @@
 package org.ampath.utils;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import org.ampath.model.Meal;
@@ -109,6 +110,7 @@ public class DataStore {
 		Order order = findOrderById(orderId);
 		
 		meal.setId(Meal.autoIncrementAndGetID());
+		meal.setCreatedAt(new Date());
 		order.getMeals().add(meal);
 	}
 	
